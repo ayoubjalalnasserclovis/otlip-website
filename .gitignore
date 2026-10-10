@@ -1,0 +1,5 @@
+.env
+deploy_bundle.zip
+*.png
+.DS_Store
+node_modules

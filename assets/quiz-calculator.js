@@ -25,18 +25,59 @@ function initQuiz() {
   const btnPrev = document.getElementById("quiz-btn-prev");
   const btnNext = document.getElementById("quiz-btn-next");
 
+  // Session ID & UTM tracking
+  let sessionId = localStorage.getItem("otlip_quiz_session_id");
+  if (!sessionId) {
+    sessionId = "otlip_" + Math.random().toString(36).substring(2, 11) + "_" + Date.now();
+    localStorage.setItem("otlip_quiz_session_id", sessionId);
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const utmSource = urlParams.get("utm_source") || null;
+  const utmMedium = urlParams.get("utm_medium") || null;
+  const utmCampaign = urlParams.get("utm_campaign") || null;
+
   // Selection states
   const quizData = {
-    projectType: "vitrine",
-    businessName: "",
-    activitySector: "",
-    targetAudience: "",
-    designStyle: "minimaliste",
-    specificNeeds: "",
-    clientName: "",
-    clientEmail: "",
-    clientPhone: ""
+    session_id: sessionId,
+    current_step: 1,
+    status: "in_progress",
+    project_type: "vitrine",
+    business_name: "",
+    activity_sector: "",
+    target_audience: "",
+    design_style: "minimaliste",
+    specific_needs: "",
+    client_name: "",
+    client_email: "",
+    client_phone: "",
+    utm_source: utmSource,
+    utm_medium: utmMedium,
+    utm_campaign: utmCampaign
   };
+
+  // Sync touch or drop-off to Supabase in background
+  function syncProgress(step, status = "in_progress") {
+    quizData.current_step = step;
+    quizData.status = status;
+
+    const endpoint = "/.netlify/functions/record-quiz";
+    const payload = JSON.stringify(quizData);
+
+    // Use sendBeacon if supported or fetch
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(endpoint, new Blob([payload], { type: "application/json" }));
+    } else {
+      fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload
+      }).catch(err => console.warn("Sync error:", err));
+    }
+  }
+
+  // Initial sync on load
+  syncProgress(1, "in_progress");
 
   // Option Cards click handlers
   document.querySelectorAll(".quiz-option-card").forEach(card => {
@@ -47,7 +88,10 @@ function initQuiz() {
       document.querySelectorAll(`.quiz-option-card[data-group="${group}"]`).forEach(c => c.classList.remove("selected"));
       card.classList.add("selected");
 
-      quizData[group] = val;
+      if (group === "projectType") quizData.project_type = val;
+      if (group === "designStyle") quizData.design_style = val;
+
+      syncProgress(currentStep, "in_progress");
     });
   });
 
@@ -96,6 +140,7 @@ function initQuiz() {
       if (currentStep > 1) {
         currentStep--;
         updateStepUI();
+        syncProgress(currentStep, "in_progress");
       }
     });
   }
@@ -104,10 +149,16 @@ function initQuiz() {
     btnNext.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // Step validations
+      // Step validations & Meta Pixel firing
       if (currentStep === 1) {
+        if (window.fbq) {
+          fbq("trackCustom", "Quiz_Step1_Completed", {
+            project_type: quizData.project_type
+          });
+        }
         currentStep++;
         updateStepUI();
+        syncProgress(currentStep, "in_progress");
       } else if (currentStep === 2) {
         const busName = document.getElementById("quiz-business-name")?.value.trim();
         const activity = document.getElementById("quiz-activity")?.value.trim();
@@ -115,15 +166,30 @@ function initQuiz() {
           alert("Veuillez indiquer le nom de votre entreprise et votre activité.");
           return;
         }
-        quizData.businessName = busName;
-        quizData.activitySector = activity;
-        quizData.targetAudience = document.getElementById("quiz-target")?.value.trim() || "";
+        quizData.business_name = busName;
+        quizData.activity_sector = activity;
+        quizData.target_audience = document.getElementById("quiz-target")?.value.trim() || "";
+
+        if (window.fbq) {
+          fbq("trackCustom", "Quiz_Step2_Completed", {
+            business_name: busName,
+            activity: activity
+          });
+        }
         currentStep++;
         updateStepUI();
+        syncProgress(currentStep, "in_progress");
       } else if (currentStep === 3) {
-        quizData.specificNeeds = document.getElementById("quiz-needs")?.value.trim() || "";
+        quizData.specific_needs = document.getElementById("quiz-needs")?.value.trim() || "";
+
+        if (window.fbq) {
+          fbq("trackCustom", "Quiz_Step3_Completed", {
+            design_style: quizData.design_style
+          });
+        }
         currentStep++;
         updateStepUI();
+        syncProgress(currentStep, "in_progress");
       } else if (currentStep === 4) {
         const name = document.getElementById("quiz-client-name")?.value.trim();
         const email = document.getElementById("quiz-client-email")?.value.trim();
@@ -134,26 +200,32 @@ function initQuiz() {
           return;
         }
 
-        quizData.clientName = name;
-        quizData.clientEmail = email;
-        quizData.clientPhone = phone;
+        quizData.client_name = name;
+        quizData.client_email = email;
+        quizData.client_phone = phone;
+        quizData.status = "completed";
 
         btnNext.disabled = true;
         btnNext.innerHTML = "Transmission au studio...";
 
-        // Fire Meta Pixel lead if present
+        // Fire Meta Pixel Standard Lead Event
         if (window.fbq) {
           fbq("track", "Lead", {
-            content_name: quizData.businessName,
-            content_category: quizData.projectType
+            content_name: quizData.business_name,
+            content_category: quizData.project_type,
+            value: 39.00,
+            currency: "EUR"
           });
         }
+
+        // Final sync
+        syncProgress(4, "completed");
 
         setTimeout(() => {
           showQuizSuccessModal(quizData);
           btnNext.disabled = false;
           btnNext.innerHTML = "Lancer la création de mon site";
-        }, 1000);
+        }, 800);
       }
     });
   }

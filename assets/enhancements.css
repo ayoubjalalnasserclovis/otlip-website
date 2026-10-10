@@ -317,19 +317,36 @@
   transform: translateY(-8px);
   box-shadow: 0 25px 50px rgba(12, 16, 24, 0.12);
   border-color: var(--color-accent-orange);
-}
-
 .showcase-img-box {
   width: 100%;
-  height: 200px;
-  background: linear-gradient(135deg, #0c1018 0%, #192029 100%);
+  height: 230px;
+  background: #0c1018;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
+  display: block;
+}
+
+.showcase-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  display: block;
+}
+
+.showcase-card:hover .showcase-img-box img {
+  transform: scale(1.05);
+}
+
+.showcase-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(12, 16, 24, 0.35) 0%, rgba(12, 16, 24, 0.05) 50%, rgba(12, 16, 24, 0.45) 100%);
+  pointer-events: none;
 }
 
 .showcase-tag {

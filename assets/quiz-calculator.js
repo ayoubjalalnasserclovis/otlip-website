@@ -56,24 +56,43 @@ function initQuiz() {
     utm_campaign: utmCampaign
   };
 
-  // Sync touch or drop-off to Supabase in background
+  // Sync touch or drop-off directly to Supabase REST API (100% reliable, zero cold start)
   function syncProgress(step, status = "in_progress") {
     quizData.current_step = step;
     quizData.status = status;
 
-    const endpoint = "/.netlify/functions/record-quiz";
-    const payload = JSON.stringify(quizData);
+    const supabaseUrl = "https://pcxzyykqvenyurffepok.supabase.co/rest/v1/quiz_leads";
+    const supabaseKey = "sb_publishable_Yd99sfuyTBruMSOr_KKSzA_8qqkOhbt";
 
-    // Use sendBeacon if supported or fetch
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon(endpoint, new Blob([payload], { type: "application/json" }));
-    } else {
-      fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: payload
-      }).catch(err => console.warn("Sync error:", err));
-    }
+    const payload = JSON.stringify({
+      session_id: quizData.session_id,
+      current_step: quizData.current_step,
+      status: quizData.status,
+      project_type: quizData.project_type || null,
+      business_name: quizData.business_name || null,
+      activity_sector: quizData.activity_sector || null,
+      target_audience: quizData.target_audience || null,
+      design_style: quizData.design_style || null,
+      specific_needs: quizData.specific_needs || null,
+      client_name: quizData.client_name || null,
+      client_email: quizData.client_email || null,
+      client_phone: quizData.client_phone || null,
+      utm_source: quizData.utm_source || null,
+      utm_medium: quizData.utm_medium || null,
+      utm_campaign: quizData.utm_campaign || null,
+      updated_at: new Date().toISOString()
+    });
+
+    fetch(supabaseUrl, {
+      method: "POST",
+      headers: {
+        "apikey": supabaseKey,
+        "Authorization": `Bearer ${supabaseKey}`,
+        "Content-Type": "application/json",
+        "Prefer": "resolution=merge-duplicates"
+      },
+      body: payload
+    }).catch(err => console.warn("Supabase sync warning:", err));
   }
 
   // Initial sync on load

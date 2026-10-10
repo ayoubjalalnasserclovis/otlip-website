@@ -3,6 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   initQuiz();
   initComparisonTool();
+  initFaqAccordion();
 });
 
 function initQuiz() {
@@ -262,4 +263,31 @@ function initComparisonTool() {
 
   monthsSlider.addEventListener("input", recalculate);
   recalculate();
+}
+
+function initFaqAccordion() {
+  const accordionItems = document.querySelectorAll(".faq-accordion-item");
+  if (!accordionItems.length) return;
+
+  accordionItems.forEach(item => {
+    const header = item.querySelector(".faq-accordion-header");
+    if (!header) return;
+
+    header.addEventListener("click", () => {
+      const isOpen = item.classList.contains("open");
+
+      // Close all items
+      accordionItems.forEach(i => {
+        i.classList.remove("open");
+        const h = i.querySelector(".faq-accordion-header");
+        if (h) h.setAttribute("aria-expanded", "false");
+      });
+
+      // If it wasn't open, open it
+      if (!isOpen) {
+        item.classList.add("open");
+        header.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
 }

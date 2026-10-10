@@ -27,17 +27,14 @@ function initQuiz() {
   // Selection states
   const quizData = {
     projectType: "vitrine",
-    currentSituation: "creation",
     businessName: "",
     activitySector: "",
     targetAudience: "",
     designStyle: "minimaliste",
-    hasLogoContent: "none",
     specificNeeds: "",
     clientName: "",
     clientEmail: "",
-    clientPhone: "",
-    preferredContact: "whatsapp"
+    clientPhone: ""
   };
 
   // Option Cards click handlers
@@ -81,12 +78,12 @@ function initQuiz() {
     if (btnNext) {
       if (currentStep === totalSteps) {
         btnNext.innerHTML = `
-          <span>Générer ma Maquette Gratuite</span>
+          <span>Lancer la création de mon site</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
         `;
       } else {
         btnNext.innerHTML = `
-          <span>Continuer</span>
+          <span>Étape suivante</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
         `;
       }
@@ -114,7 +111,7 @@ function initQuiz() {
         const busName = document.getElementById("quiz-business-name")?.value.trim();
         const activity = document.getElementById("quiz-activity")?.value.trim();
         if (!busName || !activity) {
-          alert("Veuillez renseigner le nom de votre entreprise et votre domaine d'activité.");
+          alert("Veuillez indiquer le nom de votre entreprise et votre activité.");
           return;
         }
         quizData.businessName = busName;
@@ -132,7 +129,7 @@ function initQuiz() {
         const phone = document.getElementById("quiz-client-phone")?.value.trim();
 
         if (!name || !email || !phone) {
-          alert("Veuillez renseigner votre nom, email et téléphone afin de recevoir le lien de prévisualisation.");
+          alert("Veuillez renseigner votre nom, adresse email et téléphone.");
           return;
         }
 
@@ -141,7 +138,7 @@ function initQuiz() {
         quizData.clientPhone = phone;
 
         btnNext.disabled = true;
-        btnNext.innerHTML = "Création du dossier en cours...";
+        btnNext.innerHTML = "Transmission au studio...";
 
         // Fire Meta Pixel lead if present
         if (window.fbq) {
@@ -154,8 +151,8 @@ function initQuiz() {
         setTimeout(() => {
           showQuizSuccessModal(quizData);
           btnNext.disabled = false;
-          btnNext.innerHTML = "Générer ma Maquette Gratuite";
-        }, 1200);
+          btnNext.innerHTML = "Lancer la création de mon site";
+        }, 1000);
       }
     });
   }
@@ -186,18 +183,18 @@ function showQuizSuccessModal(data) {
   `;
 
   modal.innerHTML = `
-    <span style="font-size: 3.5rem; display: block; margin-bottom: 1.5rem;">🎉</span>
-    <span style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; color: var(--color-accent-orange); letter-spacing: 0.15em; font-weight: 700; display: block; margin-bottom: 0.75rem;">DOSSIER VALIDÉ · 0€ À AVANCER</span>
-    <h3 style="font-family: var(--font-sans); font-size: 2rem; margin-bottom: 1.25rem; letter-spacing: -0.03em;">Félicitations, ${data.clientName} !</h3>
+    <span style="font-size: 3.5rem; display: block; margin-bottom: 1.5rem;">✨</span>
+    <span style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; color: var(--color-accent-orange); letter-spacing: 0.15em; font-weight: 700; display: block; margin-bottom: 0.75rem;">BRIEF ENREGISTRÉ · CRÉATION 100% OFFERTE</span>
+    <h3 style="font-family: var(--font-sans); font-size: 2rem; margin-bottom: 1.25rem; letter-spacing: -0.03em;">Votre site est en préparation, ${data.clientName}.</h3>
     <p style="font-family: var(--font-sans); font-size: 0.98rem; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 2rem;">
-      Votre brief pour <strong>${data.businessName}</strong> est transmis au studio. Nous concevons la maquette interactive de votre site sous <strong>72 heures</strong>.<br><br>
+      Notre équipe conçoit l'architecture et les maquettes de <strong>${data.businessName}</strong>. Vous recevrez l'accès interactif pour tester l'intégralité du site en conditions réelles.<br><br>
       <span style="color: #ffffff; background: rgba(228, 108, 68, 0.15); padding: 0.35rem 0.75rem; border-radius: 8px; border: 1px solid rgba(228, 108, 68, 0.3);">
-        <strong>Rappel Garanti :</strong> Vous verrez et testerez le site complet avant de payer le moindre centime.
+        <strong>Engagement contractuel :</strong> Vous validez le résultat avant le moindre prélèvement.
       </span>
     </p>
     <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.25rem; margin-bottom: 2.5rem; font-size: 0.88rem; color: rgba(255,255,255,0.7); text-align: left;">
-      <p style="margin-bottom: 0.5rem;">📱 Contact de confirmation envoyé à : <strong>${data.clientEmail}</strong></p>
-      <p style="margin: 0;">📞 Suivi WhatsApp/SMS sous 2h au : <strong>${data.clientPhone}</strong></p>
+      <p style="margin-bottom: 0.5rem;">✉️ Lien de démonstration envoyé à : <strong>${data.clientEmail}</strong></p>
+      <p style="margin: 0;">📱 Notification de mise à disposition au : <strong>${data.clientPhone}</strong></p>
     </div>
     <button id="close-quiz-success" style="
       font-family: var(--font-sans);
@@ -211,7 +208,7 @@ function showQuizSuccessModal(data) {
       cursor: pointer;
       box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
       transition: all 0.3s;
-    ">Retour à l'accueil</button>
+    ">Retour au site</button>
   `;
 
   document.body.appendChild(modal);
@@ -246,14 +243,14 @@ function initComparisonTool() {
     if (sliderMonthsLabel) sliderMonthsLabel.textContent = `${months} mois`;
 
     // Traditional Agency calculation:
-    // Creation fee: 2500€
-    // Maintenance: 90€/month
+    // Upfront: 2500€
+    // Maintenance & fixes: 90€/month
     // Hosting + Domain: 15€/month
     const agencyTotal = 2500 + (months * 105);
 
-    // Otlip calculation:
-    // Creation fee: 0€
-    // Monthly leasing: 39€/month all inclusive
+    // Otlip leasing model:
+    // Upfront: 0€
+    // Monthly all inclusive: 39€/month
     const otlipTotal = months * 39;
 
     const savings = agencyTotal - otlipTotal;

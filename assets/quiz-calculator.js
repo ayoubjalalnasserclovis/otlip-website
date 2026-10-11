@@ -57,7 +57,7 @@ function initQuiz() {
   };
 
   // Sync touch or drop-off directly to Supabase REST API (100% reliable, zero cold start)
-  function syncProgress(step, status = "in_progress") {
+  async function syncProgress(step, status = "in_progress") {
     quizData.current_step = step;
     quizData.status = status;
 
@@ -83,16 +83,23 @@ function initQuiz() {
       updated_at: new Date().toISOString()
     });
 
-    fetch(supabaseUrl, {
-      method: "POST",
-      headers: {
-        "apikey": supabaseKey,
-        "Authorization": `Bearer ${supabaseKey}`,
-        "Content-Type": "application/json",
-        "Prefer": "resolution=merge-duplicates"
-      },
-      body: payload
-    }).catch(err => console.warn("Supabase sync warning:", err));
+    try {
+      const response = await fetch(supabaseUrl, {
+        method: "POST",
+        headers: {
+          "apikey": supabaseKey,
+          "Authorization": `Bearer ${supabaseKey}`,
+          "Content-Type": "application/json",
+          "Prefer": "resolution=merge-duplicates"
+        },
+        body: payload,
+        keepalive: true
+      });
+      return response.ok;
+    } catch (err) {
+      console.warn("Supabase sync warning:", err);
+      return false;
+    }
   }
 
   // Initial sync on load
@@ -165,7 +172,7 @@ function initQuiz() {
   }
 
   if (btnNext) {
-    btnNext.addEventListener("click", (e) => {
+    btnNext.addEventListener("click", async (e) => {
       e.preventDefault();
 
       // Step validations & Meta Pixel firing
@@ -237,12 +244,10 @@ function initQuiz() {
           });
         }
 
-        // Final sync
-        syncProgress(4, "completed");
+        // Final sync: await network call to guarantee writing before page unload
+        await syncProgress(4, "completed");
 
-        setTimeout(() => {
-          window.location.href = "/merci.html";
-        }, 600);
+        window.location.href = "/merci.html";
       }
     });
   }

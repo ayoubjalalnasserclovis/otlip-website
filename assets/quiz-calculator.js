@@ -241,10 +241,8 @@ function initQuiz() {
         syncProgress(4, "completed");
 
         setTimeout(() => {
-          showQuizSuccessModal(quizData);
-          btnNext.disabled = false;
-          btnNext.innerHTML = "Lancer la création de mon site";
-        }, 800);
+          window.location.href = "/merci.html";
+        }, 600);
       }
     });
   }

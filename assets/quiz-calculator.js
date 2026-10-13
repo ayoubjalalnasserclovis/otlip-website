@@ -102,10 +102,39 @@ function initQuiz() {
     }
   }
 
-  // Initial sync on load
-  syncProgress(1, "in_progress");
+  // Auto-scroll helper to keep quiz in full view on mobile and desktop
+  function scrollToQuiz() {
+    const quizEl = document.getElementById("quiz-builder");
+    if (quizEl) {
+      quizEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
 
-  // Option Cards click handlers
+  // Auto-sync input fields on blur so partial data is never lost even if user drops off mid-quiz
+  const fieldMappings = [
+    { id: "quiz-business-name", key: "business_name" },
+    { id: "quiz-activity", key: "activity_sector" },
+    { id: "quiz-target", key: "target_audience" },
+    { id: "quiz-needs", key: "specific_needs" },
+    { id: "quiz-client-name", key: "client_name" },
+    { id: "quiz-client-email", key: "client_email" },
+    { id: "quiz-client-phone", key: "client_phone" }
+  ];
+
+  fieldMappings.forEach(({ id, key }) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener("blur", () => {
+        const val = el.value.trim();
+        if (val && val !== quizData[key]) {
+          quizData[key] = val;
+          syncProgress(currentStep, "in_progress");
+        }
+      });
+    }
+  });
+
+  // Option Cards click handlers (Auto-advance on Step 1 for effortless mobile UX)
   document.querySelectorAll(".quiz-option-card").forEach(card => {
     card.addEventListener("click", () => {
       const group = card.dataset.group;
@@ -114,10 +143,30 @@ function initQuiz() {
       document.querySelectorAll(`.quiz-option-card[data-group="${group}"]`).forEach(c => c.classList.remove("selected"));
       card.classList.add("selected");
 
-      if (group === "projectType") quizData.project_type = val;
-      if (group === "designStyle") quizData.design_style = val;
+      if (group === "projectType") {
+        quizData.project_type = val;
 
-      syncProgress(currentStep, "in_progress");
+        if (window.fbq) {
+          fbq("trackCustom", "Quiz_Step1_Completed", {
+            project_type: quizData.project_type
+          });
+        }
+
+        // Auto-advance to Step 2 smoothly after 200ms
+        setTimeout(() => {
+          if (currentStep === 1) {
+            currentStep = 2;
+            updateStepUI();
+            scrollToQuiz();
+            syncProgress(2, "in_progress");
+          }
+        }, 220);
+      }
+
+      if (group === "designStyle") {
+        quizData.design_style = val;
+        syncProgress(currentStep, "in_progress");
+      }
     });
   });
 
@@ -166,6 +215,7 @@ function initQuiz() {
       if (currentStep > 1) {
         currentStep--;
         updateStepUI();
+        scrollToQuiz();
         syncProgress(currentStep, "in_progress");
       }
     });
@@ -184,6 +234,7 @@ function initQuiz() {
         }
         currentStep++;
         updateStepUI();
+        scrollToQuiz();
         syncProgress(currentStep, "in_progress");
       } else if (currentStep === 2) {
         const busName = document.getElementById("quiz-business-name")?.value.trim();
@@ -204,6 +255,7 @@ function initQuiz() {
         }
         currentStep++;
         updateStepUI();
+        scrollToQuiz();
         syncProgress(currentStep, "in_progress");
       } else if (currentStep === 3) {
         quizData.specific_needs = document.getElementById("quiz-needs")?.value.trim() || "";
@@ -215,6 +267,7 @@ function initQuiz() {
         }
         currentStep++;
         updateStepUI();
+        scrollToQuiz();
         syncProgress(currentStep, "in_progress");
       } else if (currentStep === 4) {
         const name = document.getElementById("quiz-client-name")?.value.trim();

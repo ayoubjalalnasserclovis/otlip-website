@@ -2,11 +2,24 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Otlip">
   <title>Votre site web professionnel pour 39€/mois — 0€ de création | Otlip</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta name="description" content="Obtenez votre site web professionnel clé en main pour 39 €/mois. 0 € de frais de création. Testez votre maquette sur mobile avant de payer. Sans engagement.">
+  
+  <meta name="description" content="Obtenez votre site web professionnel clé en main pour 39 €/mois. 0 € de frais de création. Nous créons, hébergeons et maintenons votre site en 7 jours. Sans engagement.">
 
+  <!-- Inter Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Otlip Official Stylesheets & Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/main-B2x4ONao.css">
+  <link rel="stylesheet" href="/assets/enhancements.css">
+  <script type="module" crossorigin src="/assets/main-uwTS9_-1.js"></script>
+  <script src="/assets/quiz-calculator.js" defer></script>
+  
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -25,875 +38,370 @@
   /></noscript>
 
   <style>
-    :root {
-      --color-bg: #fbf9f5;
-      --color-surface: #ffffff;
-      --color-text-dark: #0c1018;
-      --color-text-muted: #5e6673;
-      --color-accent-orange: #e46c44;
-      --color-accent-green: #2e8b24;
-      --color-border: rgba(12, 16, 24, 0.1);
-      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    body {
-      background-color: var(--color-bg);
-      color: var(--color-text-dark);
-      font-family: var(--font-family);
-      line-height: 1.5;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Minimalist Header (Distraction-free, zero navigation links) */
-    .top-bar {
-      width: 100%;
-      padding: 1rem 1.5rem;
-      background: var(--color-bg);
-      border-bottom: 1px solid rgba(12, 16, 24, 0.06);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .brand-logo {
-      font-size: 1.5rem;
-      font-weight: 850;
-      color: var(--color-text-dark);
-      letter-spacing: -0.04em;
-    }
-
-    .top-pill {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--color-accent-green);
-      background: rgba(46, 139, 36, 0.1);
-      border: 1px solid rgba(46, 139, 36, 0.2);
-      padding: 0.35rem 0.8rem;
-      border-radius: 9999px;
-    }
-
-    /* General Layout */
-    .container {
-      width: 100%;
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    /* SECTION A: Hero Section */
-    .hero-section {
-      padding: 3rem 0 3.5rem;
-      text-align: center;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(228, 108, 68, 0.1);
-      color: var(--color-accent-orange);
-      border: 1px solid rgba(228, 108, 68, 0.25);
-      padding: 0.4rem 1rem;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-title {
-      font-size: 2.3rem;
-      font-weight: 850;
-      letter-spacing: -0.035em;
-      line-height: 1.2;
-      color: var(--color-text-dark);
-      max-width: 780px;
-      margin: 0 auto 1.2rem;
-    }
-
-    .hero-title span.highlight {
-      color: var(--color-accent-orange);
-    }
-
-    .hero-subtitle {
-      font-size: 1.12rem;
-      color: var(--color-text-muted);
-      line-height: 1.55;
-      max-width: 660px;
-      margin: 0 auto 2rem;
-    }
-
-    .hero-cta-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .btn-main {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      background: var(--color-accent-orange);
-      color: #ffffff;
-      padding: 1.2rem 2.2rem;
-      border-radius: 16px;
-      font-size: 1.1rem;
-      font-weight: 750;
-      text-decoration: none;
-      box-shadow: 0 8px 24px rgba(228, 108, 68, 0.35);
-      transition: all 0.2s ease;
-      width: 100%;
-      max-width: 440px;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-main:active {
-      transform: scale(0.98);
-      background: #cf5c36;
-    }
-
-    .hero-reassurance {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--color-text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .hero-mockup-wrap {
-      margin-top: 2rem;
-      border-radius: 24px;
-      overflow: hidden;
-      background: #ffffff;
-      border: 1px solid var(--color-border);
-      box-shadow: 0 20px 50px rgba(12, 16, 24, 0.08);
-      padding: 1.5rem;
-    }
-
-    .mockup-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .mockup-item {
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(12, 16, 24, 0.08);
-      background: #f7f9fa;
-    }
-
-    .mockup-item img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .mockup-caption {
-      padding: 0.65rem 0.8rem;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--color-text-dark);
-      text-align: left;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    /* SECTION B: Pain vs Solution (Pourquoi 39€/mois ?) */
-    .section-compare {
-      padding: 4.5rem 0;
-      background: #ffffff;
-      border-top: 1px solid var(--color-border);
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .sec-header {
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto 3rem;
-    }
-
-    .sec-tag {
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-accent-orange);
-      margin-bottom: 0.6rem;
-      display: block;
-    }
-
-    .sec-title {
-      font-size: 1.9rem;
-      font-weight: 850;
-      letter-spacing: -0.03em;
-      line-height: 1.25;
-      margin-bottom: 0.8rem;
-    }
-
-    .sec-desc {
-      font-size: 1rem;
-      color: var(--color-text-muted);
-      line-height: 1.5;
-    }
-
-    .compare-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
-
-    .compare-card {
-      border-radius: 20px;
-      padding: 2rem 1.6rem;
-      border: 1.5px solid var(--color-border);
-      background: #faf8f5;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .compare-card.winner {
-      border-color: var(--color-accent-orange);
-      background: #fff9f6;
-      box-shadow: 0 10px 30px rgba(228, 108, 68, 0.12);
-      position: relative;
-    }
-
-    .winner-badge {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--color-accent-orange);
-      color: #ffffff;
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      padding: 0.25rem 0.85rem;
-      border-radius: 9999px;
-      white-space: nowrap;
-    }
-
-    .compare-card-title {
-      font-size: 1.2rem;
-      font-weight: 800;
-      margin-bottom: 0.5rem;
-    }
-
-    .compare-card-price {
-      font-size: 1.6rem;
-      font-weight: 850;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: baseline;
-      gap: 0.3rem;
-    }
-
-    .compare-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      font-size: 0.92rem;
-      color: var(--color-text-dark);
-      flex: 1;
-    }
-
-    .compare-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      line-height: 1.4;
-    }
-
-    /* SECTION C: Portfolio */
-    .section-portfolio {
-      padding: 4.5rem 0;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-
-    .portfolio-card {
-      background: #ffffff;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1.5px solid var(--color-border);
-      box-shadow: 0 6px 20px rgba(12, 16, 24, 0.04);
-      transition: transform 0.25s ease;
-    }
-
-    .portfolio-img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .portfolio-meta {
-      padding: 1.25rem 1.5rem;
-    }
-
-    .portfolio-sector {
-      font-size: 0.75rem;
-      font-weight: 750;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--color-accent-orange);
-      margin-bottom: 0.3rem;
-    }
-
-    .portfolio-name {
-      font-size: 1.15rem;
-      font-weight: 800;
-      margin-bottom: 0.4rem;
-    }
-
-    .portfolio-desc {
-      font-size: 0.88rem;
-      color: var(--color-text-muted);
-      line-height: 1.4;
-    }
-
-    /* SECTION D: 3 Steps */
-    .section-steps {
-      padding: 4.5rem 0;
-      background: #ffffff;
-      border-top: 1px solid var(--color-border);
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .step-box {
-      background: #faf8f5;
-      border: 1.5px solid var(--color-border);
-      border-radius: 20px;
-      padding: 2.2rem 1.6rem;
-      position: relative;
-    }
-
-    .step-num {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: var(--color-text-dark);
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      font-weight: 850;
-      margin-bottom: 1.25rem;
-    }
-
-    .step-box.highlight .step-num {
-      background: var(--color-accent-orange);
-    }
-
-    .step-box-title {
-      font-size: 1.15rem;
-      font-weight: 800;
-      margin-bottom: 0.5rem;
-    }
-
-    .step-box-desc {
-      font-size: 0.92rem;
-      color: var(--color-text-muted);
-      line-height: 1.5;
-    }
-
-    /* SECTION E: FAQ */
-    .section-faq {
-      padding: 4.5rem 0;
-    }
-
-    .faq-list {
-      max-width: 720px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .faq-item {
-      background: #ffffff;
-      border: 1.5px solid var(--color-border);
-      border-radius: 18px;
-      padding: 1.4rem 1.6rem;
-    }
-
-    .faq-question {
-      font-size: 1.05rem;
-      font-weight: 750;
-      color: var(--color-text-dark);
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .faq-answer {
-      font-size: 0.92rem;
-      color: var(--color-text-muted);
-      line-height: 1.5;
-    }
-
-    /* SECTION F: 2-Step Lead Form (Micro-engagement) */
-    .section-form {
-      padding: 4.5rem 0 6rem;
-      background: linear-gradient(180deg, #fbf9f5 0%, #f0ede5 100%);
-    }
-
-    .form-container {
-      max-width: 580px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 28px;
-      padding: 2.5rem 2rem;
-      box-shadow: 0 15px 45px rgba(12, 16, 24, 0.08);
-      border: 1.5px solid var(--color-border);
-    }
-
-    .form-step-indicator {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1.5rem;
-      font-size: 0.82rem;
-      font-weight: 750;
-      color: var(--color-accent-orange);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .form-step-bar {
-      width: 100%;
-      height: 6px;
-      background: rgba(12, 16, 24, 0.08);
-      border-radius: 9999px;
-      margin-bottom: 1.75rem;
-      overflow: hidden;
-    }
-
-    .form-step-bar-fill {
-      height: 100%;
-      width: 50%;
-      background: var(--color-accent-orange);
-      transition: width 0.3s ease;
-    }
-
-    .form-step {
-      display: none;
-    }
-
-    .form-step.active {
-      display: block;
-      animation: fadeIn 0.25s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .chips-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .chip-btn {
-      background: #faf8f5;
-      border: 1.5px solid var(--color-border);
-      border-radius: 14px;
-      padding: 1rem 0.9rem;
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--color-text-dark);
-      text-align: left;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      transition: all 0.15s ease;
-    }
-
-    .chip-btn.selected {
-      border-color: var(--color-accent-orange);
-      background: #fff8f5;
-      color: var(--color-accent-orange);
-      box-shadow: 0 0 0 1px var(--color-accent-orange);
-    }
-
-    .input-group {
-      margin-bottom: 1.2rem;
-    }
-
-    .input-label {
-      display: block;
-      font-size: 0.92rem;
-      font-weight: 750;
-      margin-bottom: 0.4rem;
-      color: var(--color-text-dark);
-    }
-
-    .input-field {
-      width: 100%;
-      background: #faf8f5;
-      border: 1.5px solid var(--color-border);
-      border-radius: 14px;
-      padding: 1.05rem 1.15rem;
-      font-family: inherit;
-      font-size: 1rem;
-      color: var(--color-text-dark);
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .input-field:focus {
-      border-color: var(--color-accent-orange);
-      background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(228, 108, 68, 0.12);
-    }
-
-    .trust-guarantee-badge {
-      background: rgba(46, 139, 36, 0.08);
-      border: 1px solid rgba(46, 139, 36, 0.2);
-      border-radius: 12px;
-      padding: 0.85rem 1rem;
-      font-size: 0.84rem;
-      color: #1a5e14;
-      line-height: 1.35;
-      margin-top: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    /* Floating WhatsApp Button */
-    .wa-float-btn {
+    /* WhatsApp Floating Button */
+    .wa-floating-btn {
       position: fixed;
       bottom: 24px;
-      right: 20px;
-      z-index: 100;
-      display: flex;
+      right: 24px;
+      z-index: 9999;
+      display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 10px;
       background: #25d366;
       color: #ffffff;
-      padding: 0.75rem 1.25rem 0.75rem 0.9rem;
+      padding: 0.85rem 1.4rem;
       border-radius: 9999px;
       text-decoration: none;
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-      font-weight: 750;
-      font-size: 0.9rem;
-      transition: transform 0.2s ease;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+      transition: var(--transition-fast);
     }
-
-    .wa-float-btn:active {
-      transform: scale(0.95);
+    .wa-floating-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 35px rgba(37, 211, 102, 0.5);
     }
-
-    .wa-icon {
-      width: 28px;
-      height: 28px;
-      fill: #ffffff;
-      flex-shrink: 0;
-    }
-
-    /* Footer */
-    .funnel-footer {
-      padding: 2.5rem 0;
-      text-align: center;
-      font-size: 0.84rem;
-      color: var(--color-text-muted);
-      border-top: 1px solid var(--color-border);
-      background: var(--color-bg);
-    }
-
-    /* Mobile Responsive */
     @media (max-width: 768px) {
-      .hero-title {
-        font-size: 1.85rem;
-      }
-      .hero-subtitle {
-        font-size: 1rem;
-      }
-      .mockup-grid {
-        grid-template-columns: 1fr;
-      }
-      .mockup-item img {
-        height: 150px;
-      }
-      .compare-cards-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-      .steps-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-      .chips-grid {
-        grid-template-columns: 1fr;
-      }
-      .form-container {
-        padding: 1.8rem 1.25rem;
-      }
-      .wa-text {
+      .wa-floating-btn span {
         display: none;
       }
-      .wa-float-btn {
-        padding: 0.8rem;
-        border-radius: 50%;
+      .wa-floating-btn {
+        padding: 0.85rem;
         bottom: 18px;
         right: 18px;
       }
+    }
+
+    /* Comparison Table Styling */
+    .compare-cross {
+      color: #e53e3e;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+    .compare-check {
+      color: #38a169;
+      font-weight: 700;
+      margin-right: 6px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Minimal Distraction-free Header -->
-  <header class="top-bar">
-    <div class="brand-logo">otlip.</div>
-    <div class="top-pill">0€ de frais de création</div>
-  </header>
+  <!-- Custom Morphing Cursor Follower -->
+  <div class="custom-cursor" id="cursor"></div>
 
-  <main>
+  <!-- Grand Twilight Backdrop (Scrolling sky container for upper fold) -->
+  <div class="sky-backdrop-wrapper"></div>
 
-    <!-- SECTION A: HERO -->
-    <section class="hero-section">
-      <div class="container">
-        <div class="hero-badge">🛡️ Pas de carte bancaire · 0€ aujourd'hui</div>
-        <h1 class="hero-title">
-          Obtenez votre site web professionnel clé en main pour <span class="highlight">39 €/mois</span>. <br>0 € de frais de création.
+  <!-- Main Platform Container -->
+  <div class="main-wrapper">
+
+    <!-- 🧭 Minimal Navigation Header (Distraction-free: No exit links) -->
+    <header class="otlip-nav-header" id="nav-header">
+      <a class="nav-logo" href="/funnel2" id="nav-logo">otlip.</a>
+      <div class="nav-right">
+        <a href="#formulaire" class="nav-cta" data-cursor-label="Démo">Recevoir ma démo gratuite</a>
+      </div>
+    </header>
+
+    <!-- 🚀 SECTION A: Hero Section (Au-dessus de la ligne de flottaison) -->
+    <section class="hero-section" id="hero" style="min-height: auto; padding-top: 4.5rem; padding-bottom: 3.5rem;">
+      <div class="hero-content">
+        <div class="hero-badge-container reveal">
+          <span class="hero-badge-tag">Zéro Risque</span>
+          <span class="hero-badge-text">Pas de carte bancaire · 0€ de frais de création</span>
+        </div>
+        
+        <h1 class="hero-headline reveal">
+          Obtenez votre site web professionnel clé en main pour <span class="highlight-serif orange">39 €/mois.</span>
         </h1>
-        <p class="hero-subtitle">
-          Nous créons, hébergeons et maintenons votre site. Vous n'avez rien à faire : nous nous occupons de tout en 7 jours.
+        
+        <p class="hero-subhead reveal">
+          Nous créons, hébergeons et maintenons votre site. Vous n'avez rien à faire : <strong>nous nous occupons de tout de A à Z en 7 jours. Vous le testez en ligne sur votre smartphone avant de payer un seul centime.</strong>
+        </p>
+        
+        <div class="hero-actions reveal">
+          <a href="#formulaire" class="btn-primary" data-cursor-label="Démo">
+            Recevoir une démo pour mon activité
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+        </div>
+
+        <div class="hero-reassurance reveal" style="margin-top: 1.5rem; font-family: var(--font-sans); font-size: 0.92rem; color: var(--color-text-muted); display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <span>⭐ <strong>Sans engagement</strong></span>
+          <span>•</span>
+          <span>⚡ <strong>Livré en 7 jours</strong></span>
+          <span>•</span>
+          <span>🛠️ <strong>Modifications incluses</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🛡️ Guarantee & Trust Bar (Signature Otlip) -->
+    <div class="guarantee-bar-wrapper">
+      <div class="guarantee-bar reveal">
+        <div class="guarantee-item">
+          <span class="guarantee-icon">👀</span>
+          <div>
+            <div class="guarantee-label">Vous voyez avant de payer</div>
+            <div class="guarantee-sub">Pas de carte bancaire au départ</div>
+          </div>
+        </div>
+        <div class="guarantee-item">
+          <span class="guarantee-icon">💸</span>
+          <div>
+            <div class="guarantee-label">0€ de frais de création</div>
+            <div class="guarantee-sub">Tout est compris dans l'abonnement</div>
+          </div>
+        </div>
+        <div class="guarantee-item">
+          <span class="guarantee-icon">🔓</span>
+          <div>
+            <div class="guarantee-label">Sans engagement</div>
+            <div class="guarantee-sub">Vous arrêtez quand vous voulez</div>
+          </div>
+        </div>
+        <div class="guarantee-item">
+          <span class="guarantee-icon">🛠️</span>
+          <div>
+            <div class="guarantee-label">Zéro technique pour vous</div>
+            <div class="guarantee-sub">On s'occupe de tout, tout le temps</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🎯 No-Brainer Callout -->
+      <div class="nobrainer-banner reveal">
+        <div class="nobrainer-icon-wrap">🤝</div>
+        <div class="nobrainer-content">
+          <span class="nobrainer-tag">La promesse simple</span>
+          <h2 class="nobrainer-title">On prend le risque à votre place.</h2>
+          <p class="nobrainer-desc">
+            Dans une agence classique, vous versez 2 000€ à 5 000€ d'acompte avant de voir la moindre maquette. 
+            Chez <strong>Otlip</strong>, on fait l'inverse : on prépare votre site, on rédige vos textes, on met en valeur vos prestations. 
+            <strong>Vous recevez votre lien, vous testez sur votre téléphone. Ça vous plaît ? On active. Ça ne vous plaît pas ? Vous ne payez rien du tout.</strong>
+          </p>
+        </div>
+        <div class="nobrainer-badge">0€ d'Acompte · 0 Risque</div>
+      </div>
+    </div>
+
+    <!-- ⚖️ SECTION B: Comparatif Douleur vs Solution (Pourquoi 39€/mois ?) -->
+    <section class="comparison-section" id="comparatif">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <span class="section-meta reveal">Modèle économique transparent</span>
+        <h2 class="section-title reveal">
+          Pourquoi 39 €/mois ? <span class="highlight-serif orange">Où est l'arnaque ?</span>
+        </h2>
+        <p class="section-desc reveal">
+          Spoiler : il n'y en a pas. Nous avons simplement supprimé les coûts inutiles et les marges excessives des agences traditionnelles.
         </p>
 
-        <div class="hero-cta-wrap">
-          <a href="#formulaire" class="btn-main">
-            <span>Recevoir une démo pour mon activité →</span>
+        <!-- Comparison Table -->
+        <div class="comparison-table-wrapper reveal">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th style="width: 34%;">Critères</th>
+                <th style="width: 33%;">Agence classique</th>
+                <th class="col-otlip" style="width: 33%;">Otlip (Tout Inclus)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-feature">Frais de départ (Création)</td>
+                <td class="col-agency"><span class="compare-cross">✕</span> 2 000 € à 5 000 € d'avance</td>
+                <td class="col-otlip"><span class="comparison-badge-good">✓ 0 € d'acompte</span></td>
+              </tr>
+              <tr>
+                <td class="col-feature">Délai de livraison</td>
+                <td class="col-agency"><span class="compare-cross">✕</span> 2 à 3 mois d'attente</td>
+                <td class="col-otlip"><span class="comparison-badge-good">✓ Prêt sous 7 jours</span></td>
+              </tr>
+              <tr>
+                <td class="col-feature">Modifications & Mises à jour</td>
+                <td class="col-agency"><span class="compare-cross">✕</span> Facturées 80€ à 150€ / heure</td>
+                <td class="col-otlip"><span class="comparison-badge-good">✓ 100% Incluses sans surcoût</span></td>
+              </tr>
+              <tr>
+                <td class="col-feature">Hébergement & Nom de domaine</td>
+                <td class="col-agency"><span class="compare-cross">✕</span> Facturé en plus chaque année</td>
+                <td class="col-otlip"><span class="comparison-badge-good">✓ Inclus (.fr / .com & SSL)</span></td>
+              </tr>
+              <tr class="highlight-row">
+                <td class="col-feature">Engagement de durée</td>
+                <td class="col-agency"><span class="compare-cross">✕</span> Contrats bloqués 24 à 48 mois</td>
+                <td class="col-otlip"><span class="comparison-badge-good">✓ Sans aucun engagement</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Interactive Cost & Savings Calculator -->
+        <div class="calc-box reveal">
+          <div>
+            <span class="section-meta" style="color: var(--color-accent-orange); margin-bottom: 0.75rem;">Calculateur d'économies réelles</span>
+            <h3 class="calc-title">Faites le calcul sur votre durée d'activité</h3>
+            <p class="calc-desc">
+              Déplacez le curseur pour comparer le coût réel entre une agence classique et notre formule tout compris à 39€/mois.
+            </p>
+            
+            <div style="margin-bottom: 1.5rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; font-family: var(--font-mono); font-size: 0.9rem;">
+                <span style="color: rgba(255,255,255,0.7);">Durée :</span>
+                <span id="slider-months-count" style="color: var(--color-accent-orange); font-weight: 700; font-size: 1.1rem;">12 mois</span>
+              </div>
+              <input type="range" id="comparison-months-slider" min="3" max="36" value="12" step="1" style="width: 100%; accent-color: var(--color-accent-orange); height: 8px; border-radius: 9999px; cursor: pointer;">
+              <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-top: 0.5rem;">
+                <span>3 mois</span>
+                <span>12 mois</span>
+                <span>24 mois</span>
+                <span>36 mois</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 2rem; font-family: var(--font-sans); font-size: 0.9rem; color: rgba(255,255,255,0.7); flex-wrap: wrap;">
+              <div>Agence classique : <strong id="agency-calculated-cost" style="color: #ffffff;">3 760 €</strong></div>
+              <div>Avec Otlip : <strong id="otlip-calculated-cost" style="color: var(--color-accent-orange);">468 €</strong></div>
+            </div>
+          </div>
+
+          <div class="calc-metrics">
+            <div class="calc-metric-label">Économie immédiate</div>
+            <div class="calc-metric-val" id="savings-calculated-amount">3 292 €</div>
+            <div class="calc-metric-sub">d'argent qui reste dans votre trésorerie</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🌟 SECTION C: Portfolio ("À quoi va ressembler mon site ?") -->
+    <section class="realisations-section" id="exemples">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <span class="section-meta reveal">Exemples concrets</span>
+        <h2 class="section-title reveal">
+          À quoi va ressembler votre futur site ? <span class="highlight-serif orange">De vraies réussites.</span>
+        </h2>
+        <p class="section-desc reveal">
+          Des sites ultra-rapides, adaptés aux smartphones et optimisés pour déclencher des appels de clients locaux.
+        </p>
+
+        <div class="showcase-grid">
+          <!-- Client 1: GAD Rénovation -->
+          <div class="showcase-card reveal">
+            <div class="showcase-img-box">
+              <img src="/assets/showcase/gad-renovation.jpg" alt="Site GAD Rénovation" loading="lazy">
+              <div class="showcase-img-overlay"></div>
+              <span class="showcase-tag">BTP & Artisanat</span>
+              <span class="showcase-badge-live">En ligne</span>
+            </div>
+            <div class="showcase-body">
+              <h3 class="showcase-title">GAD Rénovation</h3>
+              <p class="showcase-desc">Artisan plaquiste et rénovation complète. Galerie de réalisations avant/après et demande de devis express.</p>
+              <div class="showcase-metrics">
+                <span>gad-renovation.com</span>
+                <span class="showcase-link-btn">Formule Vitrine 39€/m</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client 2: Le Terroir Constantinois -->
+          <div class="showcase-card reveal">
+            <div class="showcase-img-box">
+              <img src="/assets/showcase/le-terroir-constantinois.jpg" alt="Site Le Terroir Constantinois" loading="lazy">
+              <div class="showcase-img-overlay"></div>
+              <span class="showcase-tag">Restauration & Traiteur</span>
+              <span class="showcase-badge-live">En ligne</span>
+            </div>
+            <div class="showcase-body">
+              <h3 class="showcase-title">Le Terroir Constantinois</h3>
+              <p class="showcase-desc">Menu en ligne interactif, horaires clairs et module de commande directe sans commission.</p>
+              <div class="showcase-metrics">
+                <span>le-terroir.com</span>
+                <span class="showcase-link-btn">Formule Vitrine 39€/m</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client 3: Ceramico -->
+          <div class="showcase-card reveal">
+            <div class="showcase-img-box">
+              <img src="/assets/showcase/ceramico.jpg" alt="Site Ceramico Carrelage" loading="lazy">
+              <div class="showcase-img-overlay"></div>
+              <span class="showcase-tag">Carrelage & Finitions</span>
+              <span class="showcase-badge-live">En ligne</span>
+            </div>
+            <div class="showcase-body">
+              <h3 class="showcase-title">Ceramico</h3>
+              <p class="showcase-desc">Pose de carrelage grand format et salles de bain clés en main. Présentation soignée des finitions.</p>
+              <div class="showcase-metrics">
+                <span>ceramico.fr</span>
+                <span class="showcase-link-btn">Formule Vitrine 39€/m</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client 4: FB Convoyage -->
+          <div class="showcase-card reveal">
+            <div class="showcase-img-box">
+              <img src="/assets/showcase/fb-convoyage.jpg" alt="Site FB Convoyage" loading="lazy">
+              <div class="showcase-img-overlay"></div>
+              <span class="showcase-tag">Transport & Logistique</span>
+              <span class="showcase-badge-live">En ligne</span>
+            </div>
+            <div class="showcase-body">
+              <h3 class="showcase-title">FB Convoyage</h3>
+              <p class="showcase-desc">Tarification claire, réassurance professionnelle et contact WhatsApp instantané pour les pros.</p>
+              <div class="showcase-metrics">
+                <span>fb-convoyage.com</span>
+                <span class="showcase-link-btn">Formule Vitrine 39€/m</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3.5rem;" class="reveal">
+          <a href="#formulaire" class="btn-primary" data-cursor-label="Démo">
+            Je veux un site de ce style pour mon activité
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
           </a>
-          <div class="hero-reassurance">
-            <span>⭐ Sans engagement</span>
-            <span>•</span>
-            <span>⚡ Livré en 7 jours</span>
-            <span>•</span>
-            <span>🛠️ Modifications incluses</span>
-          </div>
-        </div>
-
-        <!-- Hero Mockup Previews -->
-        <div class="hero-mockup-wrap">
-          <div class="mockup-grid">
-            <div class="mockup-item">
-              <img src="/assets/showcase/gad-renovation.jpg" alt="Site BTP Rénovation">
-              <div class="mockup-caption">
-                <span>GAD Rénovation</span>
-                <span style="color: var(--color-accent-orange); font-size: 0.75rem;">BTP / Artisan</span>
-              </div>
-            </div>
-            <div class="mockup-item">
-              <img src="/assets/showcase/le-terroir-constantinois.jpg" alt="Site Restauration Traiteur">
-              <div class="mockup-caption">
-                <span>Le Terroir Constantinois</span>
-                <span style="color: var(--color-accent-orange); font-size: 0.75rem;">Restaurant</span>
-              </div>
-            </div>
-            <div class="mockup-item">
-              <img src="/assets/showcase/ceramico.jpg" alt="Site Artisan Carreleur">
-              <div class="mockup-caption">
-                <span>Ceramico</span>
-                <span style="color: var(--color-accent-orange); font-size: 0.75rem;">Carreleur</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION B: COMPARATIF DOULEUR VS SOLUTION -->
-    <section class="section-compare">
-      <div class="container">
-        <div class="sec-header">
-          <span class="sec-tag">Modèle économique transparent</span>
-          <h2 class="sec-title">Pourquoi 39 €/mois ? Où est l'arnaque ?</h2>
-          <p class="sec-desc">
-            Spoiler : il n'y en a pas. Nous avons simplement supprimé les marges excessives des agences et les prises de tête du bricolage en ligne.
-          </p>
-        </div>
-
-        <div class="compare-cards-grid">
-          <!-- Agence -->
-          <div class="compare-card">
-            <h3 class="compare-card-title">Agence classique</h3>
-            <div class="compare-card-price" style="color: #c53030;">2 000€ à 5 000€</div>
-            <ul class="compare-list">
-              <li>❌ Gros paiement d'avance sans certitude du résultat</li>
-              <li>❌ Délais interminables (2 à 3 mois)</li>
-              <li>❌ Chaque petite modification vous est facturée 100€</li>
-              <li>❌ Coûts d'hébergement et de maintenance en supplément</li>
-            </ul>
-          </div>
-
-          <!-- DIY -->
-          <div class="compare-card">
-            <h3 class="compare-card-title">Faire soi-même (Wix/WP)</h3>
-            <div class="compare-card-price" style="color: #d69e2e;">15€ à 30€/mois</div>
-            <ul class="compare-list">
-              <li>❌ Des dizaines d'heures perdues le week-end</li>
-              <li>❌ Résultat visuel souvent amateur et peu crédible</li>
-              <li>❌ Bugs d'affichage sur smartphone non résolus</li>
-              <li>❌ Site invisible sur Google sans vrai référencement</li>
-            </ul>
-          </div>
-
-          <!-- Otlip -->
-          <div class="compare-card winner">
-            <span class="winner-badge">NOTRE OFFRE CLÉ EN MAIN</span>
-            <h3 class="compare-card-title">Location Tout-Inclus Otlip</h3>
-            <div class="compare-card-price" style="color: var(--color-accent-orange);">
-              39€<span style="font-size: 1rem; font-weight: 500; color: var(--color-text-muted);">/mois</span>
-            </div>
-            <ul class="compare-list">
-              <li>✅ <strong>0 € de frais de création</strong> (vous testez avant de payer)</li>
-              <li>✅ <strong>Design pro & sur-mesure</strong> adapté à votre métier</li>
-              <li>✅ <strong>Nom de domaine .fr / .com</strong> & hébergement rapide inclus</li>
-              <li>✅ <strong>Modifications illimitées</strong> sur simple message</li>
-              <li>✅ <strong>100% Sans engagement de durée</strong> : vous partez quand vous voulez</li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION C: PORTFOLIO -->
-    <section class="section-portfolio">
-      <div class="container">
-        <div class="sec-header">
-          <span class="sec-tag">Exemples concrets</span>
-          <h2 class="sec-title">À quoi va ressembler votre futur site ?</h2>
-          <p class="sec-desc">
-            Des sites ultra-rapides, adaptés aux smartphones et optimisés pour déclencher des appels de clients.
-          </p>
-        </div>
+    <!-- ⚡ SECTION D: Comment ça marche en 3 étapes simples (Zéro charge mentale) -->
+    <section class="features-section" id="comment-ca-marche">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <span class="section-meta reveal">Simplicité maximale</span>
+        <h2 class="section-title reveal">
+          Comment ça marche en 3 étapes simples ? <span class="highlight-serif orange">Zéro charge mentale.</span>
+        </h2>
+        <p class="section-desc reveal">
+          Vous n'avez aucune compétence technique à avoir. Nous prenons tout en charge de A à Z.
+        </p>
 
-        <div class="portfolio-grid">
-          <div class="portfolio-card">
-            <img class="portfolio-img" src="/assets/showcase/gad-renovation.jpg" alt="Exemple site BTP Rénovation">
-            <div class="portfolio-meta">
-              <span class="portfolio-sector">BTP & Rénovation</span>
-              <h3 class="portfolio-name">GAD Rénovation</h3>
-              <p class="portfolio-desc">Mise en avant des chantiers réalisés, avis clients et bouton d'appel direct.</p>
-            </div>
-          </div>
-
-          <div class="portfolio-card">
-            <img class="portfolio-img" src="/assets/showcase/le-terroir-constantinois.jpg" alt="Exemple site Restaurant">
-            <div class="portfolio-meta">
-              <span class="portfolio-sector">Restauration & Traiteur</span>
-              <h3 class="portfolio-name">Le Terroir Constantinois</h3>
-              <p class="portfolio-desc">Menu en ligne, horaires clairs et module de réservation directe.</p>
-            </div>
-          </div>
-
-          <div class="portfolio-card">
-            <img class="portfolio-img" src="/assets/showcase/ceramico.jpg" alt="Exemple site Carreleur">
-            <div class="portfolio-meta">
-              <span class="portfolio-sector">Artisanat / Pose de carrelage</span>
-              <h3 class="portfolio-name">Ceramico</h3>
-              <p class="portfolio-desc">Galerie photos avant/après, formulaire de devis rapide et géolocalisation.</p>
-            </div>
-          </div>
-
-          <div class="portfolio-card">
-            <img class="portfolio-img" src="/assets/showcase/fb-convoyage.jpg" alt="Exemple site Transport">
-            <div class="portfolio-meta">
-              <span class="portfolio-sector">Transport & Logistique</span>
-              <h3 class="portfolio-name">FB Convoyage</h3>
-              <p class="portfolio-desc">Tarification claire, réassurance professionnelle et contact WhatsApp instantané.</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 2.5rem;">
-          <a href="#formulaire" class="btn-main" style="max-width: 380px;">
-            Je veux un site de ce style pour mon activité →
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION D: 3 ÉTAPES SIMPLES -->
-    <section class="section-steps">
-      <div class="container">
-        <div class="sec-header">
-          <span class="sec-tag">Simplicité maximale</span>
-          <h2 class="sec-title">Comment ça marche en 3 étapes simples ?</h2>
-          <p class="sec-desc">
-            Vous n'avez aucune compétence technique à avoir. Nous prenons tout en charge.
-          </p>
-        </div>
-
-        <div class="steps-grid">
-          <div class="step-box">
-            <div class="step-num">1</div>
-            <h3 class="step-box-title">Vous remplissez le formulaire (2 min)</h3>
-            <p class="step-box-desc">
-              Indiquez simplement votre métier, le nom de votre entreprise et vos préférences de couleurs.
+        <div class="features-grid">
+          <div class="feature-card reveal">
+            <div class="feature-icon">1</div>
+            <h3 class="feature-title">Vous remplissez le formulaire (2 min)</h3>
+            <p class="feature-desc">
+              Indiquez simplement votre métier, le nom de votre entreprise et vos coordonnées. Pas de long cahier des charges.
             </p>
           </div>
 
-          <div class="step-box">
-            <div class="step-num">2</div>
-            <h3 class="step-box-title">On crée votre site (Sous 7 jours)</h3>
-            <p class="step-box-desc">
-              Nos designers et rédacteurs conçoivent votre maquette complète, rédigent vos textes et adaptent le graphisme.
+          <div class="feature-card reveal">
+            <div class="feature-icon">2</div>
+            <h3 class="feature-title">On crée votre site (Sous 7 jours)</h3>
+            <p class="feature-desc">
+              Nos designers et rédacteurs conçoivent votre maquette interactive, rédigent vos textes et adaptent le graphisme pour votre métier.
             </p>
           </div>
 
-          <div class="step-box highlight">
-            <div class="step-num">3</div>
-            <h3 class="step-box-title">Validation & Mise en ligne</h3>
-            <p class="step-box-desc">
+          <div class="feature-card reveal featured">
+            <div class="feature-icon" style="background: var(--color-accent-orange); color: #ffffff;">3</div>
+            <h3 class="feature-title">Validation & Mise en ligne</h3>
+            <p class="feature-desc">
               Vous testez le site sur votre téléphone. Seulement s'il vous plaît, l'abonnement à 39€/mois démarre. S'il ne vous plaît pas, vous ne payez rien.
             </p>
           </div>
@@ -901,159 +409,216 @@
       </div>
     </section>
 
-    <!-- SECTION E: FAQ -->
-    <section class="section-faq">
-      <div class="container">
-        <div class="sec-header">
-          <span class="sec-tag">Foire Aux Questions</span>
-          <h2 class="sec-title">Toutes les réponses à vos questions</h2>
-        </div>
+    <!-- ❓ SECTION E: FAQ (Détruire les freins) -->
+    <section class="faq-section" id="faq">
+      <div style="max-width: 900px; margin: 0 auto;">
+        <span class="section-meta reveal">Foire Aux Questions</span>
+        <h2 class="section-title reveal">
+          Toutes les réponses à vos questions. <span class="highlight-serif orange">En toute transparence.</span>
+        </h2>
 
-        <div class="faq-list">
-          <div class="faq-item">
-            <h3 class="faq-question">❓ Y a-t-il un engagement de durée ?</h3>
-            <p class="faq-answer">
-              Absolument aucun. Notre offre est 100% sans engagement. Si votre activité change ou si vous souhaitez arrêter, un simple email suffit pour stopper l'abonnement sans aucun frais de résiliation.
-            </p>
+        <div class="faq-accordion">
+          <div class="faq-item reveal">
+            <div class="faq-question">
+              <span>Y a-t-il un engagement de durée ?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Absolument aucun. Notre offre est 100% sans engagement de durée. Si votre activité change ou si vous souhaitez arrêter, un simple email suffit pour stopper l'abonnement sans aucun frais de résiliation.</p>
+            </div>
           </div>
 
-          <div class="faq-item">
-            <h3 class="faq-question">✍️ Qui s'occupe des textes et des photos ?</h3>
-            <p class="faq-answer">
-              Notre studio s'en charge ! Vous n'avez pas besoin de passer des heures à rédiger. Vous nous donnez vos prestations principales, et nos rédacteurs rédigent des textes professionnels optimisés pour convaincre vos clients.
-            </p>
+          <div class="faq-item reveal">
+            <div class="faq-question">
+              <span>Qui s'occupe des textes et des photos ?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Notre studio s'en charge ! Vous n'avez pas besoin de passer des heures à rédiger. Vous nous donnez vos prestations principales, et nos rédacteurs rédigent des textes professionnels optimisés pour convaincre vos clients.</p>
+            </div>
           </div>
 
-          <div class="faq-item">
-            <h3 class="faq-question">🛠️ Et si j'ai besoin d'une modification plus tard ?</h3>
-            <p class="faq-answer">
-              Toutes les modifications courantes sont 100% incluses dans vos 39€/mois. Un nouvel avis Google, un changement d'horaire, une nouvelle photo de chantier ? Envoyez-nous un simple WhatsApp ou email et nous mettons à jour votre site sous 24h.
-            </p>
+          <div class="faq-item reveal">
+            <div class="faq-question">
+              <span>Et si j'ai besoin d'une modification plus tard ?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Toutes les modifications courantes sont 100% incluses dans vos 39€/mois. Un nouvel avis Google, un changement d'horaires, une nouvelle photo de chantier ? Envoyez-nous un simple WhatsApp ou email et nous mettons à jour votre site sous 24h sans surcoût.</p>
+            </div>
           </div>
 
-          <div class="faq-item">
-            <h3 class="faq-question">🌐 Le nom de domaine et l'hébergement sont-ils compris ?</h3>
-            <p class="faq-answer">
-              Oui, tout est inclus : votre nom de domaine personnalisé (.fr ou .com), l'hébergement haute performance, le certificat de sécurité SSL (cadenas vert) et la maintenance technique. Zéro frais caché.
-            </p>
+          <div class="faq-item reveal">
+            <div class="faq-question">
+              <span>Le nom de domaine et l'hébergement sont-ils compris ?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Oui, tout est inclus : votre nom de domaine personnalisé (.fr ou .com), l'hébergement haute performance, le certificat de sécurité SSL (cadenas vert) et la maintenance technique. 0 euro de frais cachés.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION F: FORMULAIRE EN 2 ÉTAPES (Micro-engagement) -->
-    <section class="section-form" id="formulaire">
-      <div class="container">
-        <div class="form-container">
-          <div class="form-step-indicator">
-            <span id="form-step-text">Étape 1 sur 2 : Votre activité</span>
-            <span>0€ d'acompte</span>
-          </div>
-          <div class="form-step-bar">
-            <div class="form-step-bar-fill" id="form-progress"></div>
-          </div>
+    <!-- 📝 SECTION F: Formulaire en 2 étapes (Micro-engagement Haute Conversion) -->
+    <section class="quiz-section" id="formulaire">
+      <div class="quiz-container reveal" style="max-width: 680px;">
+        
+        <!-- Progress Header -->
+        <div class="quiz-step-indicator">
+          <span id="f2-step-indicator">ÉTAPE 01 / 02 : VOTRE MÉTIER</span>
+          <span>SANS CARTE BANCAIRE · 0€ D'ACOMPTE</span>
+        </div>
+        <div class="quiz-progress-bar-wrap">
+          <div class="quiz-progress-bar" id="f2-progress-bar" style="width: 50%;"></div>
+        </div>
 
+        <form id="funnel2-lead-form" onsubmit="return false;">
+          
           <!-- ÉTAPE 1 : Secteur d'activité -->
-          <div class="form-step active" id="f-step-1">
-            <h2 style="font-size: 1.5rem; font-weight: 850; margin-bottom: 0.5rem; letter-spacing: -0.03em;">
-              Quel est votre secteur d'activité ?
-            </h2>
-            <p style="font-size: 0.92rem; color: var(--color-text-muted); margin-bottom: 1.25rem;">
-              Touchez votre métier pour que nous préparions une maquette adaptée :
-            </p>
+          <div id="f2-step-1">
+            <h3 class="quiz-step-title">Quel est votre secteur d'activité ?</h3>
+            <p class="quiz-step-sub">Touchez votre métier pour que nos designers adaptent votre maquette :</p>
 
-            <div class="chips-grid">
-              <button type="button" class="chip-btn selected" data-sector="BTP / Artisan / Rénovation">
-                <span>🔨</span> BTP / Artisanat
-              </button>
-              <button type="button" class="chip-btn" data-sector="Restauration / Traiteur">
-                <span>🍽️</span> Restaurant / Traiteur
-              </button>
-              <button type="button" class="chip-btn" data-sector="Transport / Auto / Moto">
-                <span>🚗</span> Transport / Auto
-              </button>
-              <button type="button" class="chip-btn" data-sector="Beauté / Bien-être / Coiffure">
-                <span>💇‍♀️</span> Beauté / Bien-être
-              </button>
-              <button type="button" class="chip-btn" data-sector="Services / Conseil / B2B">
-                <span>💼</span> Conseil / Services
-              </button>
-              <button type="button" class="chip-btn" data-sector="Autre profession">
-                <span>⚡</span> Autre profession
-              </button>
+            <div class="quiz-options-grid" style="margin-bottom: 2rem;">
+              <div class="quiz-option-card selected" data-group="sector" data-value="BTP / Artisanat / Rénovation">
+                <span class="quiz-option-icon">🔨</span>
+                <div>
+                  <h4 class="quiz-option-title">BTP & Artisanat</h4>
+                  <p class="quiz-option-desc">Plomberie, électricité, maçonnerie, menuiserie, rénovation...</p>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-group="sector" data-value="Restaurant / Traiteur / Commerce">
+                <span class="quiz-option-icon">🍽️</span>
+                <div>
+                  <h4 class="quiz-option-title">Restaurant & Commerce</h4>
+                  <p class="quiz-option-desc">Restauration, boulangerie, traiteur, épicerie, boutique...</p>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-group="sector" data-value="Transport / Automobile / Moto">
+                <span class="quiz-option-icon">🚗</span>
+                <div>
+                  <h4 class="quiz-option-title">Transport & Auto</h4>
+                  <p class="quiz-option-desc">Garage, convoyage, VTC, taxi, dépannage, logistique...</p>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-group="sector" data-value="Beauté / Bien-être / Coiffure">
+                <span class="quiz-option-icon">💇‍♀️</span>
+                <div>
+                  <h4 class="quiz-option-title">Beauté & Bien-être</h4>
+                  <p class="quiz-option-desc">Coiffure, institut, barbier, esthétique, massage...</p>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-group="sector" data-value="Services / Conseil / B2B">
+                <span class="quiz-option-icon">💼</span>
+                <div>
+                  <h4 class="quiz-option-title">Services & Conseil</h4>
+                  <p class="quiz-option-desc">Comptabilité, coaching, immobilier, formation, agence...</p>
+                </div>
+              </div>
+
+              <div class="quiz-option-card" data-group="sector" data-value="Autre profession">
+                <span class="quiz-option-icon">⚡</span>
+                <div>
+                  <h4 class="quiz-option-title">Autre profession</h4>
+                  <p class="quiz-option-desc">Prestations et activités sur mesure pour indépendants.</p>
+                </div>
+              </div>
             </div>
 
-            <div class="input-group">
-              <label class="input-label" for="inp-biz-name">Nom de votre entreprise ou marque</label>
-              <input type="text" id="inp-biz-name" class="input-field" placeholder="Ex: Rénovation Martin, Salon Sophie...">
+            <div class="quiz-form-group">
+              <label class="quiz-label" for="f2-biz-name">Nom de votre entreprise ou marque</label>
+              <input type="text" id="f2-biz-name" class="quiz-input" placeholder="Ex: Plomberie Martin, Salon Sophie, Atelier Rénov...">
             </div>
 
-            <button type="button" class="btn-main" id="btn-to-step2" style="width: 100%; margin-top: 0.5rem;">
-              <span>Continuer vers mes coordonnées →</span>
-            </button>
+            <div class="quiz-actions" style="margin-top: 1.5rem;">
+              <div></div>
+              <button type="button" class="quiz-btn-next" id="f2-btn-step1">
+                <span>Continuer vers mes coordonnées</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </button>
+            </div>
           </div>
 
-          <!-- ÉTAPE 2 : Coordonnées (Lead Capture) -->
-          <div class="form-step" id="f-step-2">
-            <h2 style="font-size: 1.5rem; font-weight: 850; margin-bottom: 0.5rem; letter-spacing: -0.03em;">
-              Où vous envoyer votre démo privée ?
-            </h2>
-            <p style="font-size: 0.92rem; color: var(--color-text-muted); margin-bottom: 1.25rem;">
-              Nous concevons votre maquette interactive et vous transmettons le lien direct sous 24h.
-            </p>
+          <!-- ÉTAPE 2 : Coordonnées (Lead) -->
+          <div id="f2-step-2" style="display: none;">
+            <h3 class="quiz-step-title">Où vous envoyer votre maquette de test ?</h3>
+            <p class="quiz-step-sub">Nous concevons votre maquette interactive et vous transmettons le lien direct sous 24h.</p>
 
-            <div class="input-group">
-              <label class="input-label" for="inp-client-name">Votre prénom et nom *</label>
-              <input type="text" id="inp-client-name" class="input-field" placeholder="Ex: Michel Durand" required>
+            <div class="quiz-form-group">
+              <label class="quiz-label" for="f2-client-name">Votre nom et prénom *</label>
+              <input type="text" id="f2-client-name" class="quiz-input" placeholder="Ex: Michel Durand" required>
             </div>
 
-            <div class="input-group">
-              <label class="input-label" for="inp-client-phone">Votre numéro de téléphone portable *</label>
-              <input type="tel" id="inp-client-phone" class="input-field" placeholder="06 12 34 56 78" required>
+            <div class="quiz-form-group">
+              <label class="quiz-label" for="f2-client-phone">Votre numéro de téléphone portable *</label>
+              <input type="tel" id="f2-client-phone" class="quiz-input" placeholder="06 12 34 56 78" required>
             </div>
 
-            <div class="input-group">
-              <label class="input-label" for="inp-client-email">Votre adresse e-mail *</label>
-              <input type="email" id="inp-client-email" class="input-field" placeholder="michel@gmail.com" required>
+            <div class="quiz-form-group">
+              <label class="quiz-label" for="f2-client-email">Votre adresse e-mail *</label>
+              <input type="email" id="f2-client-email" class="quiz-input" placeholder="michel@gmail.com" required>
             </div>
 
-            <div class="trust-guarantee-badge">
+            <div class="quiz-zero-risk-box">
               <span>🔒</span>
-              <div><strong>Promesse anti-spam :</strong> Vos coordonnées servent uniquement à vous transmettre le lien de votre maquette. Aucun harcèlement commercial.</div>
+              <span><strong>Promesse anti-spam :</strong> Vos coordonnées servent uniquement à vous transmettre le lien de votre maquette. Zéro démarchage intrusif.</span>
             </div>
 
-            <div style="display: flex; gap: 0.75rem; margin-top: 1.25rem;">
-              <button type="button" id="btn-back-step1" style="background: transparent; border: 1.5px solid var(--color-border); border-radius: 14px; padding: 1rem; cursor: pointer; font-weight: 700;">
-                ← Retour
-              </button>
-              <button type="button" class="btn-main" id="btn-submit-lead" style="flex: 1;">
-                <span>Voir ce qu'on peut faire pour moi (0€) →</span>
+            <div class="quiz-actions" style="margin-top: 2rem;">
+              <button type="button" class="quiz-btn-prev" id="f2-btn-back">← Modifier mon activité</button>
+              <button type="button" class="quiz-btn-next" id="f2-btn-submit">
+                <span>Voir ce qu'on peut faire pour moi (0€)</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </button>
             </div>
           </div>
 
-        </div>
+        </form>
       </div>
     </section>
 
-  </main>
+    <!-- ⚓ Footer Bottom -->
+    <footer class="footer-bottom">
+      <div class="footer-col">
+        <a class="footer-logo" href="/funnel2">otlip.</a>
+        <p class="footer-bio">
+          Otlip conçoit et propulse des sites web pros pour les artisans, commerçants et indépendants en France. 0€ de frais de création, sans engagement, vous voyez votre site avant de payer.
+        </p>
+      </div>
+      
+      <div class="footer-col">
+        <span class="footer-label">CONTACT DIRECT</span>
+        <p class="footer-text">Une question ? Écrivez-nous ou appelez-nous :</p>
+        <p class="footer-text"><a href="mailto:naji.ayoub2213@gmail.com">naji.ayoub2213@gmail.com</a></p>
+        <p class="footer-text mono"><a href="tel:+33753356926">07 53 35 69 26</a></p>
+      </div>
 
-  <!-- Floating WhatsApp CTA Button (Leads conversationnels rapides) -->
-  <a href="https://wa.me/33753356926?text=Bonjour,%20je%20suis%20artisan/commer%C3%A7ant,%20comment%20marche%20votre%20offre%20%C3%A0%2039%E2%82%AC%20?" class="wa-float-btn" target="_blank" rel="noopener noreferrer" aria-label="Discuter sur WhatsApp">
-    <svg class="wa-icon" viewBox="0 0 24 24">
+      <div class="footer-copymark">
+        <span class="copymark-text">© 2026 Otlip Studio. Conçu en France. Tous droits réservés.</span>
+        <div class="copymark-links">
+          <a href="/privacy">Politique de confidentialité</a>
+          <a href="/privacy#mentions">Mentions légales</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- 🟢 Floating WhatsApp CTA Button -->
+  <a href="https://wa.me/33753356926?text=Bonjour,%20je%20suis%20artisan/commer%C3%A7ant,%20comment%20marche%20votre%20offre%20%C3%A0%2039%E2%82%AC%20?" class="wa-floating-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
       <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-1.121-.061-.264-.085-.604-.202-1.042-.395-1.854-.817-3.053-2.673-3.146-2.798-.093-.125-.757-1.009-.757-1.925 0-.916.48-1.365.651-1.552.171-.187.375-.234.5-.234.125 0 .25.002.359.007.115.006.27-.043.422.323.161.391.552 1.346.601 1.444.049.098.082.213.016.342-.066.13-.098.21-.196.323-.098.114-.207.255-.296.343-.099.097-.202.203-.087.4.114.197.509.839 1.092 1.358.751.669 1.385.875 1.582.973.197.098.312.083.427-.049.115-.132.493-.574.625-.771.131-.197.263-.165.444-.099.181.066 1.15.542 1.347.641.197.098.328.148.377.23.049.083.049.48-.095.885z"/>
     </svg>
-    <span class="wa-text">Une question ? Écrivez-nous</span>
+    <span>Une question ? Écrivez-nous sur WhatsApp</span>
   </a>
 
-  <!-- Minimal Footer -->
-  <footer class="funnel-footer">
-    <div class="container">
-      <p>© 2026 Otlip Studio. Tous droits réservés. 0€ de frais de création, sans engagement.</p>
-      <p style="margin-top: 0.3rem;"><a href="/privacy" style="color: var(--color-text-muted);">Politique de confidentialité</a> • <a href="tel:+33753356926" style="color: var(--color-text-muted);">07 53 35 69 26</a></p>
-    </div>
-  </footer>
-
+  <!-- Funnel 2 Scripts -->
   <script>
     (function() {
       // Session ID
@@ -1071,7 +636,7 @@
         status: "in_progress",
         project_type: "vitrine_39",
         business_name: "",
-        activity_sector: "BTP / Artisan / Rénovation",
+        activity_sector: "BTP / Artisanat / Rénovation",
         target_audience: "Demo 39€/mois",
         design_style: "moderne",
         specific_needs: "",
@@ -1132,21 +697,21 @@
         fbq("trackCustom", "Funnel2_View");
       }
 
-      // Sector selection buttons (chips)
-      document.querySelectorAll(".chip-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-          document.querySelectorAll(".chip-btn").forEach(b => b.classList.remove("selected"));
-          btn.classList.add("selected");
-          funnel2Data.activity_sector = btn.dataset.sector;
+      // Sector selection cards
+      document.querySelectorAll(".quiz-option-card[data-group='sector']").forEach(card => {
+        card.addEventListener("click", () => {
+          document.querySelectorAll(".quiz-option-card[data-group='sector']").forEach(c => c.classList.remove("selected"));
+          card.classList.add("selected");
+          funnel2Data.activity_sector = card.dataset.value;
         });
       });
 
       // Auto-capture fields on blur
       const inputMap = [
-        { id: "inp-biz-name", key: "business_name" },
-        { id: "inp-client-name", key: "client_name" },
-        { id: "inp-client-phone", key: "client_phone" },
-        { id: "inp-client-email", key: "client_email" }
+        { id: "f2-biz-name", key: "business_name" },
+        { id: "f2-client-name", key: "client_name" },
+        { id: "f2-client-phone", key: "client_phone" },
+        { id: "f2-client-email", key: "client_email" }
       ];
 
       inputMap.forEach(item => {
@@ -1163,17 +728,17 @@
       });
 
       // Step navigation
-      const step1 = document.getElementById("f-step-1");
-      const step2 = document.getElementById("f-step-2");
-      const stepText = document.getElementById("form-step-text");
-      const progress = document.getElementById("form-progress");
-      const btnToStep2 = document.getElementById("btn-to-step2");
-      const btnBackStep1 = document.getElementById("btn-back-step1");
-      const btnSubmit = document.getElementById("btn-submit-lead");
+      const step1 = document.getElementById("f2-step-1");
+      const step2 = document.getElementById("f2-step-2");
+      const stepIndicator = document.getElementById("f2-step-indicator");
+      const progressBar = document.getElementById("f2-progress-bar");
+      const btnStep1 = document.getElementById("f2-btn-step1");
+      const btnBack = document.getElementById("f2-btn-back");
+      const btnSubmit = document.getElementById("f2-btn-submit");
 
-      if (btnToStep2) {
-        btnToStep2.addEventListener("click", () => {
-          funnel2Data.business_name = document.getElementById("inp-biz-name")?.value.trim() || "";
+      if (btnStep1) {
+        btnStep1.addEventListener("click", () => {
+          funnel2Data.business_name = document.getElementById("f2-biz-name")?.value.trim() || "";
           
           if (window.fbq) {
             fbq("trackCustom", "Funnel2_Step1_Completed", {
@@ -1182,28 +747,33 @@
             });
           }
 
-          step1.classList.remove("active");
-          step2.classList.add("active");
-          stepText.textContent = "Étape 2 sur 2 : Vos coordonnées";
-          progress.style.width = "100%";
+          step1.style.display = "none";
+          step2.style.display = "block";
+          stepIndicator.textContent = "ÉTAPE 02 / 02 : VOS COORDONNÉES";
+          progressBar.style.width = "100%";
           syncSupabase(2, "in_progress");
+
+          const container = document.getElementById("formulaire");
+          if (container) {
+            container.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
         });
       }
 
-      if (btnBackStep1) {
-        btnBackStep1.addEventListener("click", () => {
-          step2.classList.remove("active");
-          step1.classList.add("active");
-          stepText.textContent = "Étape 1 sur 2 : Votre activité";
-          progress.style.width = "50%";
+      if (btnBack) {
+        btnBack.addEventListener("click", () => {
+          step2.style.display = "none";
+          step1.style.display = "block";
+          stepIndicator.textContent = "ÉTAPE 01 / 02 : VOTRE MÉTIER";
+          progressBar.style.width = "50%";
         });
       }
 
       if (btnSubmit) {
         btnSubmit.addEventListener("click", async () => {
-          const name = document.getElementById("inp-client-name")?.value.trim();
-          const phone = document.getElementById("inp-client-phone")?.value.trim();
-          const email = document.getElementById("inp-client-email")?.value.trim();
+          const name = document.getElementById("f2-client-name")?.value.trim();
+          const phone = document.getElementById("f2-client-phone")?.value.trim();
+          const email = document.getElementById("f2-client-email")?.value.trim();
 
           if (!name || !phone || !email) {
             alert("Veuillez renseigner votre prénom, votre téléphone portable et votre e-mail pour recevoir le lien de votre maquette.");
@@ -1216,7 +786,7 @@
           funnel2Data.status = "completed";
 
           btnSubmit.disabled = true;
-          btnSubmit.innerHTML = "Transmission en cours...";
+          btnSubmit.innerHTML = "Transmission au studio en cours...";
 
           // Meta Pixel Lead Event
           if (window.fbq) {
